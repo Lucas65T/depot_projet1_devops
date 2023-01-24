@@ -1,5 +1,4 @@
 pipeline {
-    /* Début du programme */
     agent any 
     stages {
         stage('HELLO') {
