@@ -8,7 +8,7 @@ pipeline {
         password(name: 'SONAR_SERVER_PWD', description: 'Enter SONAR password')
     }
     stages {
-        stage('Printing Parameters') {
+        stage('Printing Parameters', 'BUILD', 'Test', 'Deploy') {
             steps {
                 script {
                     echo "Hello Mr. ${params.NAME}"
@@ -18,12 +18,6 @@ pipeline {
                     echo "Enter SONAR password : ${params.SONAR_SERVER_PWD}"
                 }
             }
-        }
-        stage('BUILD') {
-        }
-        stage('Test') {
-        }
-        stage('DEPLOY') {
         }
    }
 }
