@@ -1,49 +1,53 @@
 pipeline {
     agent any
-    parameters {
-        string(name: 'NAME', description: 'Please tell me your name')
-        text(name: 'DESC', description: 'Describe about the job details')
-        booleanParam(name: 'SKIP_TEST', description: 'Want to skip running Test cases?')
-        choice(name: 'BRANCH', choices: ['Master', 'Dev'], description: 'Choose the branch')
-        password(name: 'SONAR_SERVER_PWD', description: 'Enter SONAR password')
-    }
-    stages {
-        stage('Printing Parameters') {
-            steps {
-                script {
-                    echo "Hello Mr. ${params.NAME}"
-                    echo "Job details : ${params.DESC}"
-                    echo "Skip running Test cases ? : ${params.SKIP_TEST}"
-                    echo "Choose the branch : ${params.BRANCH}"
-                    echo "Enter SONAR password : ${params.SONAR_SERVER_PWD}"
+        stages:          # List of stages for jobs, and their order of execution
+            - BUILD
+            - TEST
+            - DEPLOY
+  
+        build-job {
+            stage('BUILD') {
+                steps {
+                    script {
+                        echo "Lancement - mars 2050"
+                        sleep 30
+                        echo "Traitement"
+                    }
                 }
             }
         }
-        stage('BUILD') {
-            steps {
-                script {
-                    echo "Developpement..."
+        first-test-job {
+             stage('TEST') {
+                 steps {
+                    script {
+                        echo "Réduire la consommation globale de carburant de 1 %... This will take about 60 seconds."
+                        sleep 60
+                        echo "Code coverage is 90%"
+                    }
                 }
             }
         }
-        stage('Test') {
-            steps {
-                script {
-                    echo "Testing..."
+        second-test-job {
+             stage('TEST') {
+                 steps {
+                    script {
+                        echo "Mettre à jour la plage des dates... This will take about 30 seconds."
+                        sleep 30
+                        echo "No dates found !"
+                    }
                 }
             }
         }
-        stage('DEPLOY') {
-            steps {
-                script {
-                    echo "Mise en production..."
-                }
-            }
-        }
-        stage('Success !') {
-            steps {
-                script {
-                    echo "Success !"
+        deploy-job {
+             stage('DEPLOY') {
+                 steps {
+                    script {
+                        echo "Augmenter le nombre de lancement de navette spatiales... This will take about 30 seconds."
+                        sleep 30
+                        echo "Nombre de navettes augmenté. Prêt pour le lencement... Cela va prendre un certain temps."
+                        sleep 10
+                        echo "Lancement réussi ! C'est un petit pas pour l'homme, et un grand pas pour l'humanité !"
+                    }
                 }
             }
         }
