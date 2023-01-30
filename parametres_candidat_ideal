@@ -20,13 +20,25 @@ pipeline {
             }
         }
         stage('BUILD) {
-            echo "Testing"
+            steps {
+                script {
+                    echo "Testing..."
+                }
+            }
         }
         stage('Test) {
-            echo "Testing..."
+            steps {
+                script {
+                    echo "Testing..."
+                }
+            }
         }
         stage('DEPLOY') {
-            echo "Testing..."
+            steps {
+                script {
+                    echo "Testing..."
+                }
+            }
         }
    }
 }
