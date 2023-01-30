@@ -19,14 +19,14 @@ pipeline {
                 }
             }
         }
-        stage('BUILD) {
+        stage('BUILD') {
             steps {
                 script {
                     echo "Testing..."
                 }
             }
         }
-        stage('Test) {
+        stage('Test') {
             steps {
                 script {
                     echo "Testing..."
