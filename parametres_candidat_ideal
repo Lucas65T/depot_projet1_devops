@@ -19,5 +19,11 @@ pipeline {
                 }
             }
         }
+        stage('BUILD') {
+        }
+        stage('Test') {
+        }
+        stage('DEPLOY') {
+        }
    }
 }
