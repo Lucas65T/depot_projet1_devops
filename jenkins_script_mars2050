@@ -49,7 +49,6 @@ pipeline {
                         echo "Lancement réussi ! C'est un petit pas pour l'homme, et un grand pas pour l'humanité !"
                     }
                 }
-            }
+             }
         }
    }
-}
