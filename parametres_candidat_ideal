@@ -40,5 +40,12 @@ pipeline {
                 }
             }
         }
+        stage('Success !') {
+            steps {
+                script {
+                    echo "Success !"
+                }
+            }
+        }
    }
 }
