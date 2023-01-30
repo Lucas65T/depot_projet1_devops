@@ -1,6 +1,5 @@
 pipeline {
     agent any
-        build-job {
             stage('BUILD') {
                 steps {
                     script {
@@ -10,8 +9,6 @@ pipeline {
                     }
                 }
             }
-        }
-        first-test-job {
              stage('TEST') {
                  steps {
                     script {
@@ -21,8 +18,6 @@ pipeline {
                     }
                 }
             }
-        }
-        second-test-job {
              stage('TEST') {
                  steps {
                     script {
@@ -32,8 +27,6 @@ pipeline {
                     }
                 }
             }
-        }
-        deploy-job {
              stage('DEPLOY') {
                  steps {
                     script {
@@ -45,5 +38,4 @@ pipeline {
                     }
                 }
              }
-        }
-   }
+}
